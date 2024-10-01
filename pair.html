@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📡Thenu-MD PAIR CODE</title>
+  <title>Thenu-MD PAIR CODE</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-    body {
-      display: flex;
+
+     body {
+     display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #141414;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      font-family: 'Arial', sans-serif;
-      color: #fff; /* Set the text color to white */
+      background-image: url('https://i.ibb.co/q1PJXRB/THENU-MD-PAIR.png');
+      font-family: Arial, sans-serif;
     }
 
     .container {
@@ -25,14 +22,14 @@
       flex-direction: column;
       align-items: center;
     }
-
-    .box {
+  
+  .box {
       width: 300px;
       height: 330px;
       padding: 20px;
       position: relative;
       text-align: center;
-      background-color: rgba(72, 133, 237, 0.8); /* Update background color */
+      background-color:rgb(38,59,52); /* Update background color */
       border-radius: 10px;
       transform: perspective(1000px) rotateY(0deg);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -145,11 +142,11 @@
         <div id="text">
           <i class="fa fa-user"></i>
           <p>
-            <h3 class="centered-text">Link with phone number</h3>
+            <h3 class="centered-text">𝑺𝑬𝑺𝑺𝑰𝑶𝑵 𝑺𝑪𝑨𝑵𝑵𝑬𝑹<h3>
             <br>
-            <h6>🔢 Enter your number with country code.</h6>
+             <h6 class="centered-text">𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑾𝒉𝒂𝒕𝒔𝒂𝒑𝒑 𝑵𝒖𝒎𝒃𝒆𝒓 𝑾𝒊𝒕𝒉 𝑪𝒐𝒖𝒏𝒕𝒓𝒚 𝑪𝒐𝒅𝒆 𝑾𝒊𝒕𝒉𝒐𝒖𝒕 (+).</h6>
             <div class="input-container">
-              <input placeholder="+94729xxxxxx" type="number" id="number" placeholder="❗ Enter your phone number with country code" name="">
+              <input placeholder="+9476xxxxxx" type="number" id="number" placeholder="❗ Enter your phone number with country code" name="">
               <button id="submit">Submit</button>
             </div>
             <!-- Add the loading spinner -->
@@ -177,7 +174,7 @@
     async function Copy() {
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
-      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      await navigator.clipboard.writeText(obj.innerText.replace('YOUR CODE: ', ''));
       obj.innerText = "Thenu-MD✔️ COPIED";
       obj.style = "color:red;font-weight:bold";
       obj.size = "5";
