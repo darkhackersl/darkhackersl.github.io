@@ -53,7 +53,17 @@ router.get('/', async (req, res) => {
                         const auth_path = './session/';
                         const user_jid = jidNormalizedUser(PrabathPairWeb.user.id);
 
-                        const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${user_jid}.json`);
+                      function randomMegaId(length = 6, numberLength = 4) {
+                      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                      let result = '';
+                      for (let i = 0; i < length; i++) {
+                      result += characters.charAt(Math.floor(Math.random() * characters.length));
+                        }
+                       const number = Math.floor(Math.random() * Math.pow(10, numberLength));
+                        return `${result}${number}`;
+                        }
+
+                        const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${randomMegaId()}.json`);
 
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
 
@@ -62,6 +72,12 @@ router.get('/', async (req, res) => {
                         const dt = await PrabathPairWeb.sendMessage(user_jid, {
                             text: sid
                         });
+
+                        await PrabathPairWeb.sendMessage(user_jid, {
+                            text: "┏━━━━━━━━━━━━━━┓\n┃╭┈───────────\n❗ `Dont share Your code to anyone`\n\n*💕Thank you for using Thenu-MD*\n\n*👉🏻If you have any problem please contact us on Whatsapp*\n\n*👉🏻https://wa.me/94767096711*\n\n*👉🏻https://github.com/darkhackersl/Thenu-MD-V2/fork*\n\n----------------------------------------------------\n\n",
+   
+                            });
+   
 
                     } catch (e) {
                         exec('pm2 restart prabath');
